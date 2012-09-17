@@ -23,6 +23,7 @@ public class WebCalculator extends Activity
         wvcws.setLightTouchEnabled(true);
         wvcws.setAppCacheEnabled(false);
         wvcws.setCacheMode(WebSettings.LOAD_NO_CACHE);
+        wvcws.setDomStorageEnabled(true);
         
         wv.setClickable(true);
         wv.setFocusable(true);
