@@ -337,135 +337,9 @@ WebCalculator.dom = {
     },
     setContent : function(b, a) {
         WebCalculator.selector(b).html(a)
-    },
-    getTextFieldCursorPosition : function(c) {
-        if (c.type !== "text") {
-            return -1
-        }
-        if (document.selection) {
-            var b = document.selection.createRange();
-            var a = b.getBookmark().charCodeAt(2) - 2;
-            return a
-        } else {
-            if (c.selectionStart && c.selectionEnd) {
-                return c.selectionStart
-            } else {
-                return 0
-            }
-        }
-    },
-    setTextFieldCursorPosition : function(b, c) {
-        if (b.type !== "text") {
-            return
-        }
-        if (b.createTextRange) {
-            var a = b.createTextRange();
-            a.collapse(true);
-            a.moveStart("character", c);
-            a.select()
-        } else {
-            if (b.selectionStart) {
-                b.selectionStart = c;
-                b.selectionEnd = c
-            } else {
-                throw ("Unsupported browser!")
-            }
-        }
-        b.focus()
     }
-};
-WebCalculator.dom.loadScript = function(d, c) {
-    var a = document.body, b;
-    if (!d) {
-        return
-    }
-    b = this.createElement("script", a, c);
-    if (b) {
-        b.type = "text/javascript";
-        b.src = d
-    }
-    return b
-};
-WebCalculator.dom.screen = {
-    maxx : window.innerWidth
-            || (document.documentElement && document.documentElement.clientWidth)
-            || (document.documentElement && document.documentElement.offsetWidth)
-            || (document.body && document.body.clientWidth)
-            || (document.body && document.body.offsetWidth) || 0,
-    maxy : window.innerHeight
-            || (document.documentElement && document.documentElement.clientHeight)
-            || (document.documentElement && document.documentElement.offsetHeight)
-            || (document.body && document.body.clientHeight)
-            || (document.body && document.body.offsetHeight) || 0
 };
 
-WebCalculator.css = (function() {
-    var b = WebCalculator.selector, a;
-    a = {
-        addClass : function(e, c) {
-            var d = e.className;
-            if (d.indexOf(c) === -1) {
-                e.className += " " + c
-            }
-        },
-        removeClass : function(g, d) {
-            var f, h = -1, c, e = g.className.split(" ");
-            c = e.length;
-            for (f = 0; f < c; f += 1) {
-                if (e[f] === d) {
-                    h = f;
-                    break
-                }
-            }
-            if (h === -1) {
-                return
-            }
-            e.splice(f, 1);
-            g.className = e.join(" ")
-        },
-        replaceClass : function(e, f, c) {
-            var d = WebCalculator.css;
-            d.removeClass(e, f);
-            d.addClass(e, c)
-        },
-        hasClass : function(g, d) {
-            var f, c, e, j = g, h = typeof g;
-            if (h.toLowerCase() === "string") {
-                j = b("#" + g).get(0);
-                if (eobj) {
-                    h = typeof j
-                }
-            }
-            if (h && h.toLowerCase() === "object") {
-                e = j.className.split(" ");
-                c = e.length;
-                for (f = 0; f < c; f += 1) {
-                    if (e[f] === d) {
-                        return true
-                    }
-                }
-            }
-            return false
-        },
-        getComputedStyle : function(e, d) {
-            var f, c;
-            c = b("#" + e).get(0);
-            if (!c) {
-                return ""
-            }
-            if (c.currentStyle) {
-                f = c.currentStyle[d]
-            } else {
-                if (window.getComputedStyle) {
-                    f = document.defaultView.getComputedStyle(c, null)
-                            .getPropertyValue(d)
-                }
-            }
-            return f
-        }
-    };
-    return a
-})();
 
 WebCalculator.events = (function() {
     var a = {};
@@ -511,28 +385,9 @@ WebCalculator.events = (function() {
             }
         }
     };
-    a.getEventPosX = function() {
-        if (this.eventObj.pageX) {
-            return this.eventObj.pageX
-        } else {
-            if (this.eventObj.clientX) {
-                return this.eventObj.clientX
-            }
-        }
-        return 0
-    };
-    a.getEventPosY = function() {
-        if (this.eventObj.pageY) {
-            return this.eventObj.pageY
-        } else {
-            if (this.eventObj.clientY) {
-                return this.eventObj.clientY
-            }
-        }
-        return 0
-    };
     return a
 })();
+
 WebCalculator.events.addOnLoad = function(a) {
     WebCalculator.onLoadEventStack.push(a)
 };
