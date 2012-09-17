@@ -434,13 +434,6 @@ WebCalculator.math.square = function(a) {
 WebCalculator.math.cube = function(a) {
     return WebCalculator.math.pow(a, 3)
 };
-WebCalculator.math.computeLineLength = function(d, f, c, e) {
-    var b = WebCalculator.math;
-    var a = b.subtract(c, d);
-    var h = b.subtract(e, f);
-    var g = b.add(b.square(a), b.square(h));
-    return b.sqrt(g)
-};
 WebCalculator.math.inverse = function(a) {
     return WebCalculator.math.multiply(-1, a)
 };
