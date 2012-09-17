@@ -501,7 +501,7 @@ WebCalculator.Calculator.prototype.clear = function() {
 };
 WebCalculator.Calculator.prototype.appendStorage = function(a) {
     var b = this.currentValue;
-    if ((b === 0) && (new String(b).indexOf(".") === -1)) {
+    if (((+b) === 0) && (new String(b).indexOf(".") === -1)) {
         this.currentValue = a
     } else {
         if (a === ".") {
@@ -509,7 +509,11 @@ WebCalculator.Calculator.prototype.appendStorage = function(a) {
                 return
             }
         }
-        this.currentValue = new String(b) + new String(a)
+        if ( (+b) === 0 ) { 
+            this.currentValue = new String(a);
+        } else {
+            this.currentValue = new String(b) + new String(a);
+        }
     }
     if (window.localStorage) {
         window.localStorage.setItem("WBcurrentValue", this.currentValue);
