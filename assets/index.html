@@ -57,13 +57,13 @@ body { font-size: 1em; }
 <body>
 <div id="xcalc"></div>
 <div id="scroller">&nbsp;&nbsp;<br>&nbsp;&nbsp;</div>
-<script type="text/javascript" src="WebBrowser.js"></script>
+<script type="text/javascript" src="WebCalculator.js"></script>
 <script type="text/javascript">
 function renderCalculator() {
-    var webCalc = new WebBrowser.GUICalculator("xcalc");
+    var webCalc = new WebCalculator.GUICalculator("xcalc");
     webCalc.render();
 }
-WebBrowser.events.addOnLoad(renderCalculator);
+WebCalculator.events.addOnLoad(renderCalculator);
 </script>
 </body>
 </html>
