@@ -613,7 +613,7 @@ WebCalculator.GUICalculator.prototype.render = function() {
     }
     var r = c.innerHTML;
     c.innerHTML = r;
-    this.handle.div = c.getElementById("guiCalculator");
+    this.handle.div = a("#guiCalculator").get(0);
     this.handle.div.innerHTML = "0";
     var g = this;
     var n = function(i) {
