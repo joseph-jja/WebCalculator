@@ -7,14 +7,15 @@ body { font-size: 1em; }
 #xcalc div { 
 	border: none;
 	font-size: 1em; 
-	width: 350px;  
 	text-align: right;
 	overflow: hidden;
+        width: 95%;
 }
 #xcalc table { 
 	border: 5px groove #4682B4; 
 	-webkit-border-radius: 25px; 
 	margin: 0 auto;
+        width: 98%; 
 }
 /* min device width is 300 px if the width and height are set to 50px */
 #xcalc td { 
@@ -22,25 +23,15 @@ body { font-size: 1em; }
 	-webkit-border-radius: 25px; 
 	text-align: center; 
 	font-size: 1.25em;
-	width: 50px;
-    height: 25px;
+	height: 25px;
+        width: 15%;
 }
 #xcalc tr:first-child td { 
     border-color: red;
 }
-@media (min-width:380px) {
-   #xcalc table { 
-        width: 98%; 
-    }
-    #xcalc div {
-        width: 95%;
-    }
-    #scroller { 
-        display: none;
-    }
-    #xcalc td { 
-        width: 15%;
-    }
+
+#scroller { 
+   display: auto;
 }
 @media (min-height:150px) {
     #xcalc td { 
