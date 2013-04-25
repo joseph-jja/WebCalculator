@@ -582,12 +582,10 @@ WebCalculator.GUICalculator.prototype.render = function() {
     m.setAttribute("colspan", q);
     t = {
         name : "guiCalculator",
-        type : "text",
-        size : "20",
-        maxlength : "20"
+        id : "guiCalculator", 
+        width: "90%"
     };
-    c = d.createElement("form", m);
-    this.handle.div = d.createElement("div", c, t);
+    this.handle.div = d.createElement("div", m, t);
     b = d.createElement("tr", this.handle.table);
     e = [ "1", "2", "3", "+", "sqrt", "n!", 
           "4", "5", "6", "-", "sin", "1/x",
