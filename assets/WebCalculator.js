@@ -574,6 +574,9 @@ WebCalculator.GUICalculator.prototype.render = function() {
     this.handle.table = d.createElement("table", l, {
         className : "guiCalculator"
     });
+    if ( d.screen.maxx() <= 380 ) {
+        q = 4;
+    }
     b = d.createElement("tr", this.handle.table);
     m = d.createElement("td", b);
     m.setAttribute("colspan", q);
@@ -591,9 +594,6 @@ WebCalculator.GUICalculator.prototype.render = function() {
           "7", "8", "9", "*", "cos", "x^2", 
           "+/-", "0", ".", "/", "tan", "x^3", 
           "=", "clear", "log", "exp", "PI", "x^y" ];
-    if ( d.screen.maxx() <= 380 ) {
-        q = 4;
-    }
     if ( q === 4 ) { 
         e = [ "1", "2", "3", "+", 
               "4", "5", "6", "-", 
