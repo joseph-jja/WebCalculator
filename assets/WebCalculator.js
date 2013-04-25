@@ -566,7 +566,7 @@ WebCalculator.GUICalculator.prototype.handle = {
     div : ""
 };
 WebCalculator.GUICalculator.prototype.render = function() {
-    var w, v, l, e = [], f, u, m, h, q = 6, t, b, m, k, p = WebCalculator, c, a = p.selector, d = p.dom, x = p.events;
+    var w, v, l, e = [], f, u, m, h, q = 6, t, b, m, k, p = WebCalculator, a = p.selector, d = p.dom, x = p.events;
     l = a("#" + this.parentID).get(0);
     if (!l) {
         throw ("Could not get parent element to attach calendar to!")
@@ -611,9 +611,9 @@ WebCalculator.GUICalculator.prototype.render = function() {
             b = d.createElement("tr", this.handle.table)
         }
     }
-    var r = c.innerHTML;
-    c.innerHTML = r;
-    this.handle.div = c.getElementsByTagName("div")[0];
+    var r = m.innerHTML;
+    m.innerHTML = r;
+    this.handle.div = m.getElementsByTagName("div")[0];
     this.handle.div.innerHTML = "0";
     var g = this;
     var n = function(i) {
