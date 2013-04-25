@@ -591,7 +591,7 @@ WebCalculator.GUICalculator.prototype.render = function() {
           "7", "8", "9", "*", "cos", "x^2", 
           "+/-", "0", ".", "/", "tan", "x^3", 
           "=", "clear", "log", "exp", "PI", "x^y" ];
-    if ( d.screen.maxx() <== 380 ) {
+    if ( d.screen.maxx() <= 380 ) {
         q = 4;
     }
     if ( q === 4 ) { 
