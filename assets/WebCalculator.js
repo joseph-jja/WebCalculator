@@ -339,7 +339,14 @@ WebCalculator.dom = {
         WebCalculator.selector(b).html(a)
     }
 };
-
+WebCalculator.dom.screen = {
+    maxx: function () {
+        return window.innerWidth || (document.documentElement && document.documentElement.clientWidth) || (document.documentElement && document.documentElement.offsetWidth) || (document.body && document.body.clientWidth) || (document.body && document.body.offsetWidth) || 0
+    },
+    maxy: function () {
+        return window.innerHeight || (document.documentElement && document.documentElement.clientHeight) || (document.documentElement && document.documentElement.offsetHeight) || (document.body && document.body.clientHeight) || (document.body && document.body.offsetHeight) || 0
+    }
+};
 
 WebCalculator.events = (function() {
     var a = {};
