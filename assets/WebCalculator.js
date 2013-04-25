@@ -579,9 +579,23 @@ WebCalculator.GUICalculator.prototype.render = function() {
     c = d.createElement("form", m);
     this.handle.div = d.createElement("div", c, t);
     b = d.createElement("tr", this.handle.table);
-    e = [ "1", "2", "3", "+", "sqrt", "n!", "4", "5", "6", "-", "sin", "1/x",
-            "7", "8", "9", "*", "cos", "x^2", "+/-", "0", ".", "/", "tan",
-            "x^3", "=", "clear", "log", "exp", "PI", "x^y" ];
+    e = [ "1", "2", "3", "+", "sqrt", "n!", 
+          "4", "5", "6", "-", "sin", "1/x",
+          "7", "8", "9", "*", "cos", "x^2", 
+          "+/-", "0", ".", "/", "tan", "x^3", 
+          "=", "clear", "log", "exp", "PI", "x^y" ];
+    if ( d.screen.maxx() <== 320 ) {
+        q = 4;
+    }
+    if ( q === 4 ) { 
+        e = [ "1", "2", "3", "+", 
+              "4", "5", "6", "-", 
+              "7", "8", "9", "*", 
+              "+/-", "0", ".", "/",  
+              "=", "clear", "log", "exp",
+              "sin", "cos", "tan", "PI",
+              "sqrt",  "1/x", "x^2", "x^y"  ];   
+    }
     f = e.length;
     for (w = 0; w < f; w++) {
         u = {
